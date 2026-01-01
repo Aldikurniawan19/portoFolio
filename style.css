@@ -109,6 +109,19 @@ span {
   color: var(--main-color);
 }
 
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none; /* Sembunyi di laptop/pc */
+}
+
+/* Perbaiki tombol kontak yang padding-nya 30rem (terlalu lebar) */
+.contact .btn-contac {
+  padding: 1.3rem 3rem; /* Saya ubah dari 30rem ke 3rem agar masuk akal */
+  width: 100%; /* Agar full width di mobile nanti */
+  max-width: 300px;
+}
+
 .home-content h3 {
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -541,4 +554,86 @@ span {
   background-color: var(--main-color);
   color: black;
   box-shadow: 0 0 25px var(--main-color);
+}
+
+/* Breakpoint: Mobile Landscape & Tablet Kecil (Max 768px) */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block; /* Munculkan icon hamburger */
+    cursor: pointer;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: none; /* Sembunyikan menu secara default */
+    flex-direction: column;
+  }
+
+  /* Class active ditambahkan via Javascript nanti */
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: var(--text-color);
+  }
+
+  /* Layout Home jadi vertikal */
+  .home {
+    flex-direction: column;
+  }
+
+  .home-content h3 {
+    font-size: 2.6rem;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
+  }
+
+  .home-img img {
+    width: 70vw; /* Perbesar gambar di mobile */
+    margin-top: 4rem;
+  }
+
+  /* Perbaiki text Tentang Saya */
+  .tentangSaya p {
+    padding: 0; /* Hilangkan padding kanan kiri yang besar */
+    text-align: left; /* Justify kadang jelek di HP, left lebih aman */
+  }
+
+  /* Perbaiki Contact Form agar tidak sempit */
+  .contact form .input-box input,
+  .contact form textarea {
+    width: 100%;
+  }
+}
+
+/* Breakpoint: Mobile Phones (Max 450px) */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%; /* Perkecil base font sedikit */
+  }
+
+  .home-content h1 {
+    font-size: 3.5rem; /* Sesuaikan judul agar tidak kepotong */
+  }
+
+  .contact form .input-box input {
+    width: 100%;
+  }
+
+  .karya-card {
+    width: 100%; /* Card memenuhi layar */
+  }
 }

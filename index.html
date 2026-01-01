@@ -21,6 +21,9 @@
     <!-- Navbar Start -->
     <header class="header">
       <a href="#" class="logo">ALDI <span>KURNIAWAN</span></a>
+
+      <i class="bx bx-menu" id="menu-icon"></i>
+
       <nav class="navbar">
         <a href="#home" class="active">Beranda</a>
         <a href="#tentangSaya">Tentang Saya</a>
@@ -152,6 +155,21 @@
       <p class="copyright"><i>©2025 Aldi Kurniawan || All Right Reserved</i></p>
     </footer>
     <!-- Js Untuk Animasi Scroll -->
+    <script>
+      let menuIcon = document.querySelector("#menu-icon");
+      let navbar = document.querySelector(".navbar");
+
+      menuIcon.onclick = () => {
+        menuIcon.classList.toggle("bx-x");
+        navbar.classList.toggle("active");
+      };
+
+      // Menutup menu saat link diklik
+      window.onscroll = () => {
+        menuIcon.classList.remove("bx-x");
+        navbar.classList.remove("active");
+      };
+    </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
