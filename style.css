@@ -556,10 +556,9 @@ span {
   box-shadow: 0 0 25px var(--main-color);
 }
 
-/* Breakpoint: Mobile Landscape & Tablet Kecil (Max 768px) */
 @media (max-width: 768px) {
   #menu-icon {
-    display: block; /* Munculkan icon hamburger */
+    display: block;
     cursor: pointer;
   }
 
@@ -572,11 +571,10 @@ span {
     background: var(--bg-color);
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    display: none; /* Sembunyikan menu secara default */
+    display: none;
     flex-direction: column;
   }
 
-  /* Class active ditambahkan via Javascript nanti */
   .navbar.active {
     display: flex;
   }
@@ -588,7 +586,6 @@ span {
     color: var(--text-color);
   }
 
-  /* Layout Home jadi vertikal */
   .home {
     flex-direction: column;
   }
@@ -602,31 +599,28 @@ span {
   }
 
   .home-img img {
-    width: 70vw; /* Perbesar gambar di mobile */
+    width: 70vw;
     margin-top: 4rem;
   }
 
-  /* Perbaiki text Tentang Saya */
   .tentangSaya p {
-    padding: 0; /* Hilangkan padding kanan kiri yang besar */
-    text-align: left; /* Justify kadang jelek di HP, left lebih aman */
+    padding: 0;
+    text-align: left;
   }
 
-  /* Perbaiki Contact Form agar tidak sempit */
   .contact form .input-box input,
   .contact form textarea {
     width: 100%;
   }
 }
 
-/* Breakpoint: Mobile Phones (Max 450px) */
 @media (max-width: 450px) {
   html {
-    font-size: 55%; /* Perkecil base font sedikit */
+    font-size: 55%;
   }
 
   .home-content h1 {
-    font-size: 3.5rem; /* Sesuaikan judul agar tidak kepotong */
+    font-size: 3.5rem;
   }
 
   .contact form .input-box input {
@@ -634,6 +628,44 @@ span {
   }
 
   .karya-card {
-    width: 100%; /* Card memenuhi layar */
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact form {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+
+  .input-group {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .contact form .input-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .contact form .input-box input,
+  .contact form .input-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .contact .btn-contac {
+    width: 100%;
+    max-width: none;
+    padding: 1.3rem 0;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
   }
 }
